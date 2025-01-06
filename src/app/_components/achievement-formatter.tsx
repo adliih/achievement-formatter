@@ -25,14 +25,15 @@ export function AchievementFormatter() {
       setFormattedText(formatted);
       toast.success("Achievement formatted successfully!");
     } catch (error) {
+      console.log("Error formatting achievement:", error);
       toast.error("Failed to format achievement. Please try again.");
     } finally {
       setIsLoading(false);
     }
   };
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(formattedText);
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(formattedText);
     toast.success("Copied to clipboard!");
   };
 

@@ -22,8 +22,7 @@ export async function formatAchievement(achievement: string): Promise<string> {
   try {
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
     const result = await model.generateContent(prompt);
-    const response = await result.response;
-    return response.text();
+    return result.response.text();
   } catch (error) {
     console.error("Error formatting achievement:", error);
     throw new Error("Failed to format achievement. Please try again.");
