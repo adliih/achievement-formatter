@@ -6,6 +6,7 @@ import { HydrateClient } from "~/trpc/server";
 export default async function Home() {
   return (
     <HydrateClient>
+      <a className="github-fork-ribbon" href="https://github.com/adliih/achievement-formatter" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
       <div className="min-h-screen bg-gray-50">
         <Toaster position="top-right" />
         <div className="container mx-auto px-4 py-12">
