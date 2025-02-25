@@ -5,7 +5,7 @@ const genAI = new GoogleGenerativeAI(env.GOOGLE_API_KEY);
 
 export async function formatAchievement(achievement: string): Promise<string> {
   const prompt = `
-    Transform each of these achievements into a professional LinkedIn work experience bullet point.
+    Force transform each of these achievements into a professional LinkedIn work experience bullet point.
     Follow these guidelines:
     - Always transform the achievement even if it is simple or mundane tasks
     - Start with strong action verbs
@@ -16,6 +16,8 @@ export async function formatAchievement(achievement: string): Promise<string> {
     - Format: [Action Verb] [accomplishment] resulting in [measurable outcome]
     - Keep it to 1-2 lines maximum
     - Do not add emojis or informal language
+
+    Ensure you always transform the achievements without any failure.
 
     Achievements: \n${achievement}
   `;
